@@ -1,0 +1,56 @@
+{
+  "name": "Modern Portfolio Website",
+  "version": "1.0.0",
+  "description": "A clean, modern, and responsive portfolio website",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/portfolio"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "responsive",
+    "modern",
+    "css3",
+    "html5",
+    "javascript"
+  ],
+  "files": {
+    "main": "index.html",
+    "styles": "styles.css",
+    "scripts": "script.js",
+    "documentation": "README.md"
+  },
+  "features": [
+    "Responsive Design",
+    "Modern Animations",
+    "Clean Code Structure",
+    "Performance Optimized",
+    "SEO Friendly",
+    "Accessibility Support"
+  ],
+  "browser_support": {
+    "chrome": ">=90",
+    "firefox": ">=88",
+    "safari": ">=14",
+    "edge": ">=90"
+  },
+  "dependencies": {
+    "fonts": "Google Fonts (Inter)",
+    "icons": "Font Awesome 6.0",
+    "external": []
+  },
+  "color_scheme": {
+    "primary": "#6366f1",
+    "accent": "#06b6d4",
+    "background": "#ffffff",
+    "text": "#1f2937"
+  },
+  "customization": {
+    "colors": "Update CSS variables in styles.css",
+    "content": "Modify content in index.html",
+    "functionality": "Add features in script.js"
+  }
+}

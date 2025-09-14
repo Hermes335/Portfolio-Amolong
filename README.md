@@ -155,7 +155,3 @@ This project is open source and available under the [MIT License](LICENSE).
 - Design inspiration from modern web design trends
 
 ---
-
-**Happy coding!** 🎉
-
-Remember to update this README with your specific information and requirements.

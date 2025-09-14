@@ -1,6 +1,6 @@
-# Modern Portfolio Website
+# Herald Kent Amolong - Portfolio Website
 
-A clean, modern, and responsive portfolio website built with HTML5, CSS3, and JavaScript. Features beautiful animations, smooth scrolling, and a professional design.
+Hi, I'm Herald Kent Amolong, a passionate Computer Science student learning web development and programming. This is my personal portfolio website showcasing my journey as I build projects and develop my skills in technology. Built with HTML5, CSS3, and JavaScript with beautiful animations and responsive design.
 
 ## 🌟 Features
 
@@ -18,7 +18,6 @@ Portfolio/
 ├── index.html          # Main HTML file
 ├── styles.css          # All CSS styles and animations
 ├── script.js           # JavaScript functionality
-├── wireframe-guide.html # Development wireframe reference
 ├── README.md           # This documentation
 ├── package.json        # Project configuration
 └── images/             # Image assets
@@ -27,7 +26,9 @@ Portfolio/
     ├── about-placeholder.svg       # About section image placeholder
     ├── project1-placeholder.svg    # Project 1 image placeholder
     ├── project2-placeholder.svg    # Project 2 image placeholder
-    └── project3-placeholder.svg    # Project 3 image placeholder
+    ├── project3-placeholder.svg    # Project 3 image placeholder
+    ├── project4-placeholder.svg    # Project 4 image placeholder
+    └── project5-placeholder.svg    # Project 5 image placeholder
 ```
 
 ## 🚀 Quick Start
@@ -53,12 +54,17 @@ All colors are defined as CSS variables in `styles.css`. Update these to match y
 ```
 
 ### Content
-Update the following in `index.html`:
-- Replace "Your Name" with your actual name
-- Update the hero section description
-- Add your actual projects in the projects section
-- Update contact information
-- Add your social media links
+This portfolio is personalized for Herald Kent Amolong and includes:
+- Hero section introducing Herald as a Computer Science student
+- About section highlighting his passion for web development and programming
+- Skills section showcasing technology competencies
+- Projects section featuring Herald's development work
+- Contact information and social media links
+
+To further customize:
+- Update project descriptions and links as you complete new work
+- Add new technologies to the skills section as you learn them
+- Update contact information and social profiles
 
 ### Images
 The portfolio now includes beautiful SVG placeholder images:
@@ -153,10 +159,14 @@ The `script.js` file includes:
 
 ## 📞 Support
 
-If you need help customizing this portfolio:
+If you need help understanding this portfolio:
 1. Check the comments in the code files
 2. Review this README for guidance
-3. Look at the wireframe guide (`wireframe-guide.html`) for structure reference
+3. Explore the clean, well-structured code organization
+
+## 👨‍💻 About the Developer
+
+This portfolio was created by **Herald Kent Amolong**, a Computer Science student passionate about web development and programming. Follow my journey as I continue learning and building exciting projects!
 
 ## 📄 License
 

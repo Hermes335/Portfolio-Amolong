@@ -20,8 +20,14 @@ Portfolio/
 ├── script.js           # JavaScript functionality
 ├── wireframe-guide.html # Development wireframe reference
 ├── README.md           # This documentation
-└── images/             # Image assets (create this folder)
-    └── favicon.ico     # Website favicon
+├── package.json        # Project configuration
+└── images/             # Image assets
+    ├── favicon.svg     # Website favicon (SVG format)
+    ├── profile-placeholder.svg     # Profile image placeholder
+    ├── about-placeholder.svg       # About section image placeholder
+    ├── project1-placeholder.svg    # Project 1 image placeholder
+    ├── project2-placeholder.svg    # Project 2 image placeholder
+    └── project3-placeholder.svg    # Project 3 image placeholder
 ```
 
 ## 🚀 Quick Start
@@ -55,11 +61,19 @@ Update the following in `index.html`:
 - Add your social media links
 
 ### Images
-Replace the placeholder elements with actual images:
-- Profile picture in hero section
-- About section image
-- Project screenshots
-- Favicon in `images/favicon.ico`
+The portfolio now includes beautiful SVG placeholder images:
+- **Profile image**: Modern gradient-based profile placeholder
+- **About section image**: Clean design representing your coding journey
+- **Project images**: Unique placeholders for each project with relevant visual elements
+
+To replace with your own images:
+1. Keep the same file names or update the `src` attributes in `index.html`
+2. Recommended formats: JPG, PNG, or SVG
+3. Recommended sizes:
+   - Profile image: 400x400px (square, will be displayed as circle)
+   - About image: 500x350px (rectangular)
+   - Project images: 400x300px (rectangular)
+   - Favicon: 32x32px (square)
 
 ## 📱 Sections
 

@@ -1,6 +1,6 @@
 /**
  * Portfolio Website JavaScript
- * Author: Your Name
+ * Author: Herald Kent Amolong
  * Description: Interactive functionality for modern portfolio website
  */
 
@@ -233,7 +233,7 @@ function initParallaxEffects() {
 // ===========================================
 
 /**
- * Create typing animation effect for text elements
+ * Create typing animation effect for text elements with HTML support
  * @param {HTMLElement} element - The element to apply the typing effect to
  * @param {string} text - The text to type
  * @param {number} speed - Typing speed in milliseconds
@@ -254,17 +254,194 @@ function typeWriter(element, text, speed = 100) {
 }
 
 /**
- * Initialize typing effect for hero title
+ * Simple typing effect for testing
+ * @param {HTMLElement} element - The element to apply the typing effect to
+ * @param {string} text - The text to type
+ * @param {number} speed - Typing speed in milliseconds
+ */
+function simpleTypeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+/**
+ * Enhanced typing effect that preserves HTML structure with cursor
+ * @param {HTMLElement} element - The element to apply the typing effect to
+ * @param {string} htmlContent - The HTML content to type
+ * @param {number} speed - Typing speed in milliseconds
+ */
+function typeWriterHTML(element, htmlContent, speed = 100) {
+    let i = 0;
+    let isInsideTag = false;
+    let currentTag = '';
+    let visibleText = '';
+    
+    console.log('Starting typing animation for:', htmlContent);
+    
+    // Add typing cursor styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .typing-cursor::after {
+            content: '|';
+            color: #f093fb;
+            animation: blink 1s infinite;
+            font-weight: 100;
+            margin-left: 2px;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .typing-complete .typing-cursor::after {
+            display: none;
+        }
+        
+        .hero-title.typing-hidden {
+            opacity: 0;
+        }
+        
+        .hero-title.typing-active {
+            opacity: 1;
+        }
+    `;
+    
+    if (!document.querySelector('style[data-typing-cursor]')) {
+        style.setAttribute('data-typing-cursor', 'true');
+        document.head.appendChild(style);
+    }
+    
+    // Clear content and add cursor class
+    element.innerHTML = '';
+    element.classList.add('typing-cursor', 'typing-active');
+    
+    function type() {
+        if (i < htmlContent.length) {
+            const char = htmlContent.charAt(i);
+            
+            // Check if we're entering or leaving an HTML tag
+            if (char === '<') {
+                isInsideTag = true;
+                currentTag = char;
+            } else if (char === '>') {
+                currentTag += char;
+                element.innerHTML += currentTag;
+                isInsideTag = false;
+                currentTag = '';
+            } else if (isInsideTag) {
+                currentTag += char;
+            } else {
+                // Regular character - add with typing effect
+                element.innerHTML += char;
+                visibleText += char;
+            }
+            
+            i++;
+            
+            // Only delay for visible characters (not HTML tags)
+            const delay = isInsideTag ? 0 : speed;
+            setTimeout(type, delay);
+        } else {
+            // Typing complete - remove cursor after a delay
+            console.log('Typing animation completed');
+            setTimeout(() => {
+                element.classList.remove('typing-cursor');
+                element.classList.add('typing-complete');
+            }, 1000);
+        }
+    }
+    
+    type();
+}
+
+/**
+ * Initialize typing effect for hero title with highlight preservation
  */
 function initTypingEffect() {
     const heroTitle = document.querySelector('.hero-title');
     
+    console.log('initTypingEffect called');
+    
     if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        // Start typing effect after a short delay
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
-        }, 500);
+        // Store the original content
+        const fullText = "Hi, I'm " + "Herald Kent Amolong";
+        const nameStart = fullText.indexOf("Herald Kent Amolong");
+        const beforeName = fullText.substring(0, nameStart);
+        const name = "Herald Kent Amolong";
+        
+        console.log('Before name:', beforeName);
+        console.log('Name:', name);
+        
+        // Clear and hide initially
+        heroTitle.innerHTML = '';
+        heroTitle.style.opacity = '1';
+        
+        // Add cursor styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .typing-cursor::after {
+                content: '|';
+                color: #1827f3ff;
+                animation: blink 1s infinite;
+                font-weight: 100;
+                margin-left: 2px;
+            }
+            
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+        `;
+        
+        if (!document.querySelector('style[data-typing-cursor]')) {
+            style.setAttribute('data-typing-cursor', 'true');
+            document.head.appendChild(style);
+        }
+        
+        heroTitle.classList.add('typing-cursor');
+        
+        let currentText = '';
+        let i = 0;
+        
+        function typeNextChar() {
+            if (i < fullText.length) {
+                currentText += fullText.charAt(i);
+                
+                // Check if we've reached the name part
+                if (i >= nameStart) {
+                    const beforePart = beforeName;
+                    const namePart = currentText.substring(nameStart);
+                    heroTitle.innerHTML = beforePart + '<span class="highlight">' + namePart + '</span>';
+                } else {
+                    heroTitle.innerHTML = currentText;
+                }
+                
+                i++;
+                setTimeout(typeNextChar, 80);
+            } else {
+                // Typing complete
+                setTimeout(() => {
+                    heroTitle.classList.remove('typing-cursor');
+                }, 1000);
+            }
+        }
+        
+        // Start typing after delay
+        setTimeout(typeNextChar, 1000);
+        
+    } else {
+        console.error('Hero title element not found!');
     }
 }
 

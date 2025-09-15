@@ -35,7 +35,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">HKA</a>
+                <a>HKA</a>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
@@ -53,11 +53,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero texture-dots section-gradient-1">
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Herald Kent Amolong</span>
+                    Hi, I'm <span class="typewriter-text highlight">Herald Kent Amolong</span>
                 </h1>
                 <h2 class="hero-subtitle">Computer Science Student</h2>
                 <p class="hero-description">
@@ -70,40 +70,68 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/profile-placeholder.svg" alt="Herald Kent Amolong Profile" class="profile-image">
+                <div class="tech-visual-container">
+                    <div class="orbit-container">
+                        <div class="orbit orbit-1"></div>
+                        <div class="orbit orbit-2"></div>
+                        <div class="orbit orbit-3"></div>
+                        <div class="tech-core">
+                            <div class="core-inner"></div>
+                            <div class="core-outer"></div>
+                        </div>
+                        <div class="tech-particle p1"></div>
+                        <div class="tech-particle p2"></div>
+                        <div class="tech-particle p3"></div>
+                        <div class="tech-particle p4"></div>
+                        <div class="tech-particle p5"></div>
+                        <div class="tech-particle p6"></div>
+                        <div class="tech-icon html"><i class="fab fa-html5"></i></div>
+                        <div class="tech-icon css"><i class="fab fa-css3-alt"></i></div>
+                        <div class="tech-icon js"><i class="fab fa-js"></i></div>
+                        <div class="tech-icon react"><i class="fab fa-react"></i></div>
+                        <div class="tech-icon node"><i class="fab fa-node-js"></i></div>
+                        <div class="tech-icon python"><i class="fab fa-python"></i></div>
+                    </div>
+                    <div class="glow-effect"></div>
+                </div>
             </div>
         </div>
     </section>
+    
+    <!-- Section Divider -->
+    <div class="section-divider">
+        <div class="divider-wave" style="fill: var(--background);"></div>
+    </div>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about texture-noise section-gradient-2">
         <!-- Particle Background Canvas for About Section -->
         <canvas id="about-particle-canvas" class="about-particle-background"></canvas>
         
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title scroll-fade-in">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
+                    <p class="scroll-slide-left scroll-fade-in-delay-1">
                         I'm a dedicated computer science student passionate about technology and software development. 
                         Currently pursuing my degree, I'm constantly learning new programming languages, 
                         frameworks, and best practices in web development.
                     </p>
-                    <p>
+                    <p class="scroll-slide-left scroll-fade-in-delay-2">
                         My academic journey has introduced me to various aspects of computer science, 
                         from algorithms and data structures to web development and database management. 
                         I enjoy working on personal projects to apply what I learn in class.
                     </p>
                     <div class="about-stats">
-                        <div class="stat">
+                        <div class="stat scroll-fade-in scroll-fade-in-delay-1">
                             <h3>3+</h3>
                             <p>Years Studying</p>
                         </div>
-                        <div class="stat">
+                        <div class="stat scroll-fade-in scroll-fade-in-delay-2">
                             <h3>10+</h3>
                             <p>Group Projects</p>
                         </div>
-                        <div class="stat">
+                        <div class="stat scroll-fade-in scroll-fade-in-delay-3">
                             <h3>5+</h3>
                             <p>Technologies Learned</p>
                         </div>
@@ -119,7 +147,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Learning</h2>
+            <h2 class="section-title scroll-fade-in">Skills & Learning</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Currently Learning</h3>
@@ -156,9 +184,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects texture-grid section-gradient-1">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title scroll-fade-in">Featured Projects</h2>
             
             <!-- Completed Projects -->
             <div class="project-category">
@@ -166,7 +194,9 @@
                     <i class="fas fa-check-circle"></i>
                     Completed Projects
                 </h3>
-                <div class="projects-grid">
+                <div class="projects-wrapper">
+                    <div class="projects-scroll-container">
+                        <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-card completed">
                         <div class="project-status-badge">
@@ -222,6 +252,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
 
@@ -231,8 +262,10 @@
                     <i class="fas fa-code"></i>
                     In Development
                 </h3>
-                <div class="projects-grid">
-                    <!-- Project 3 -->
+                <div class="projects-wrapper">
+                    <div class="projects-scroll-container">
+                        <div class="projects-grid">
+                            <!-- Project 3 -->
                     <div class="project-card in-development">
                         <div class="project-status-badge development">
                             <i class="fas fa-code"></i>
@@ -333,18 +366,25 @@
                             </div>
                         </div>
                     </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Section Divider -->
+    <div class="section-divider">
+        <div class="divider-zigzag" style="fill: var(--background-alt);"></div>
+    </div>
+
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact texture-dots section-gradient-3">
         <!-- Particle Background Canvas for Contact Section -->
         <canvas id="contact-particle-canvas" class="contact-particle-background"></canvas>
         
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title scroll-fade-in">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's connect!</h3>
@@ -410,5 +450,8 @@
     <!-- External JavaScript -->
     <script src="particles.js"></script>
     <script src="script.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/tech-visual.js"></script>
+    <script src="orbit.js"></script>
 </body>
 </html>

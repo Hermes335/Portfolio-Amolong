@@ -564,6 +564,7 @@ function init() {
     // 3D enhancements and particle system
     setTimeout(() => {
         init3DEnhancements();
+        initHorizontalScroll(); // Add horizontal scroll after 3D effects
     }, 500); // Delay to ensure all elements are rendered
     
     // Utility functions
@@ -721,6 +722,86 @@ function init3DEnhancements() {
     console.log('3D enhancements initialized successfully');
 }
 
+/**
+ * Initialize horizontal scroll functionality for project sections
+ */
+function initHorizontalScroll() {
+    const scrollContainers = document.querySelectorAll('.projects-scroll-container');
+    
+    console.log(`Found ${scrollContainers.length} scroll containers`);
+    
+    scrollContainers.forEach((container, index) => {
+        console.log(`Initializing scroll for container ${index + 1}`);
+        
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        // Prevent default drag behavior on images and links
+        container.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+
+        // Mouse events for drag scrolling
+        container.addEventListener('mousedown', (e) => {
+            // Don't trigger on buttons or links
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
+            
+            isDown = true;
+            container.style.cursor = 'grabbing';
+            container.classList.add('scrolling');
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            e.preventDefault();
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+            container.classList.remove('scrolling');
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+            container.classList.remove('scrolling');
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed multiplier
+            container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events for mobile
+        let startTouchX;
+        let startScrollLeft;
+
+        container.addEventListener('touchstart', (e) => {
+            startTouchX = e.touches[0].clientX;
+            startScrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!startTouchX) return;
+            const touchX = e.touches[0].clientX;
+            const walk = (startTouchX - touchX) * 1.5;
+            container.scrollLeft = startScrollLeft + walk;
+            e.preventDefault();
+        });
+
+        container.addEventListener('touchend', () => {
+            startTouchX = null;
+        });
+    });
+
+    console.log('Horizontal scroll initialized for project sections');
+}
+
 // Export functions for testing (if using modules)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -729,6 +810,7 @@ if (typeof module !== 'undefined' && module.exports) {
         showNotification,
         debounce,
         throttle,
-        init3DEnhancements
+        init3DEnhancements,
+        initHorizontalScroll
     };
 }

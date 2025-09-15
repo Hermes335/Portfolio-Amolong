@@ -561,6 +561,11 @@ function init() {
     initTypingEffect();
     initSkillInteractions();
     
+    // 3D enhancements and particle system
+    setTimeout(() => {
+        init3DEnhancements();
+    }, 500); // Delay to ensure all elements are rendered
+    
     // Utility functions
     initPreloader();
     updateFooterYear();
@@ -633,6 +638,89 @@ function throttle(func, limit) {
     };
 }
 
+// ===========================================
+// 3D ENHANCEMENTS & PARTICLE SYSTEM
+// ===========================================
+
+/**
+ * Initialize particle system and 3D effects
+ */
+function init3DEnhancements() {
+    // Initialize particle system in about section
+    const aboutCanvas = document.getElementById('about-particle-canvas');
+    if (aboutCanvas && window.ParticleSystem) {
+        const aboutParticleSystem = new ParticleSystem(aboutCanvas, {
+            particleCount: 40,
+            particleSize: 2,
+            particleColor: '#6366f1',
+            particleOpacity: 0.6,
+            connectionDistance: 100,
+            mouseInfluence: 120,
+            speed: 0.3
+        });
+        console.log('About section particle system initialized');
+    }
+
+    // Initialize particle system in contact section
+    const contactCanvas = document.getElementById('contact-particle-canvas');
+    if (contactCanvas && window.ParticleSystem) {
+        const contactParticleSystem = new ParticleSystem(contactCanvas, {
+            particleCount: 60,
+            particleSize: 2.5,
+            particleColor: '#ffffff',
+            particleOpacity: 0.7,
+            connectionDistance: 120,
+            mouseInfluence: 150,
+            speed: 0.4
+        });
+        console.log('Contact section particle system initialized');
+    }
+
+    // Initialize 3D card effects for project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    if (window.Card3D) {
+        projectCards.forEach(card => {
+            new Card3D(card, {
+                maxTilt: 10,
+                perspective: 1000,
+                scale: 1.02,
+                speed: 300,
+                glare: true
+            });
+        });
+    }
+
+    // Initialize 3D effects for skill cards
+    const skillCards = document.querySelectorAll('.skill-category');
+    if (window.Card3D) {
+        skillCards.forEach(card => {
+            new Card3D(card, {
+                maxTilt: 8,
+                perspective: 1000,
+                scale: 1.05,
+                speed: 400,
+                glare: false
+            });
+        });
+    }
+
+    // Initialize 3D effects for about stats
+    const statCards = document.querySelectorAll('.stat');
+    if (window.Card3D) {
+        statCards.forEach(card => {
+            new Card3D(card, {
+                maxTilt: 12,
+                perspective: 800,
+                scale: 1.08,
+                speed: 350,
+                glare: true
+            });
+        });
+    }
+
+    console.log('3D enhancements initialized successfully');
+}
+
 // Export functions for testing (if using modules)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -640,6 +728,7 @@ if (typeof module !== 'undefined' && module.exports) {
         typeWriter,
         showNotification,
         debounce,
-        throttle
+        throttle,
+        init3DEnhancements
     };
 }

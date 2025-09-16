@@ -1,56 +1,103 @@
 {
-  "name": "Modern Portfolio Website",
-  "version": "1.0.0",
-  "description": "A clean, modern, and responsive portfolio website",
-  "author": "Your Name",
+  "name": "herald-kent-amolong-portfolio",
+  "version": "1.2.0",
+  "description": "An interactive, animated portfolio website with advanced CSS and JavaScript features",
+  "author": "Herald Kent Amolong",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/portfolio"
+    "url": "https://portfolio-amolong.vercel.app/"
   },
   "keywords": [
     "portfolio",
-    "website",
+    "interactive",
+    "animations",
+    "particles",
+    "orbit-animation",
     "responsive",
-    "modern",
+    "modern-ui",
     "css3",
     "html5",
-    "javascript"
+    "javascript",
+    "glassmorphism"
   ],
   "files": {
     "main": "index.html",
     "styles": "styles.css",
-    "scripts": "script.js",
+    "scripts": [
+      "script.js",
+      "particles.js",
+      "orbit.js",
+      "js/scroll-animations.js",
+      "js/tech-visual.js"
+    ],
     "documentation": "README.md"
   },
   "features": [
     "Responsive Design",
-    "Modern Animations",
-    "Clean Code Structure",
-    "Performance Optimized",
-    "SEO Friendly",
+    "Interactive Tech Orbit Visualization",
+    "Particle Background Effects",
+    "Horizontal Scrolling Project Gallery",
+    "Animated Text and Element Transitions",
+    "Glassmorphism UI Elements",
+    "Dynamic Content Loading",
+    "Performance Optimized Animations",
+    "SEO Friendly Structure",
     "Accessibility Support"
   ],
   "browser_support": {
-    "chrome": ">=90",
-    "firefox": ">=88",
-    "safari": ">=14",
-    "edge": ">=90"
+    "chrome": ">=92",
+    "firefox": ">=90",
+    "safari": ">=15",
+    "edge": ">=92"
   },
   "dependencies": {
     "fonts": "Google Fonts (Inter)",
     "icons": "Font Awesome 6.0",
-    "external": []
+    "external": [],
+    "dev": {
+      "five-server": "^0.1.5"
+    }
   },
   "color_scheme": {
     "primary": "#6366f1",
+    "primary-dark": "#4f46e5",
+    "primary-light": "#a5b4fc",
     "accent": "#06b6d4",
-    "background": "#ffffff",
-    "text": "#1f2937"
+    "accent-dark": "#0891b2",
+    "accent-cyan": "#22d3ee",
+    "accent-emerald": "#10b981",
+    "accent-violet": "#8b5cf6",
+    "background": "#f7f8fa",
+    "background-dark": "#0f172a",
+    "text-primary": "#1f2937",
+    "text-secondary": "#6b7280"
+  },
+  "animations": {
+    "orbit": {
+      "duration": "25-35s",
+      "timing": "linear",
+      "iteration": "infinite"
+    },
+    "particles": {
+      "count": "variable",
+      "speed": "0.5-3",
+      "opacity": "0.3-0.8"
+    },
+    "typing": {
+      "speed": "3.5s",
+      "method": "steps(30, end)"
+    }
   },
   "customization": {
     "colors": "Update CSS variables in styles.css",
     "content": "Modify content in index.html",
-    "functionality": "Add features in script.js"
+    "animations": "Adjust parameters in particles.js and orbit.js",
+    "layout": "Modify grid settings and responsive breakpoints in styles.css",
+    "projects": "Add or update project cards in the horizontal scroll section"
+  },
+  "scripts": {
+    "start": "five-server",
+    "deploy": "echo 'Add your deployment script here'"
   }
 }

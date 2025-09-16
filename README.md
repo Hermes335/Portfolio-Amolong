@@ -1,15 +1,16 @@
-# Herald Kent Amolong - Portfolio Website
+# Herald Kent Amolong - Interactive Portfolio Website
 
-Hi, I'm Herald Kent Amolong, a passionate Computer Science student learning web development and programming. This is my personal portfolio website showcasing my journey as I build projects and develop my skills in technology. Built with HTML5, CSS3, and JavaScript with beautiful animations and responsive design.
+Hi, I'm Herald Kent Amolong, a passionate Computer Science student specializing in web development and programming. Welcome to my personal portfolio website showcasing my journey, skills, and projects in technology. Built with HTML5, CSS3, and JavaScript, this portfolio features advanced animations, interactive elements, and responsive design to create an engaging user experience.
 
 ## 🌟 Features
 
-- **Responsive Design**: Works perfectly on all devices (mobile, tablet, desktop)
-- **Modern Animations**: Smooth scroll animations, typing effects, and hover interactions
-- **Clean Code**: Well-organized, commented, and maintainable code structure
-- **Fast Loading**: Optimized for performance with efficient CSS and JavaScript
-- **SEO Friendly**: Proper meta tags and semantic HTML structure
-- **Accessibility**: ARIA labels and keyboard navigation support
+- **Responsive Design**: Seamlessly adapts to all devices (mobile, tablet, desktop)
+- **Advanced Animations**: Dynamic orbit animations, particle effects, typewriter animations, and interactive hover states
+- **Interactive Elements**: Tech orbit visualization, scrollable project galleries, and animated particle backgrounds
+- **Modern UI/UX**: Glassmorphism effects, gradient overlays, and subtle motion design
+- **Optimized Performance**: Efficient CSS variables, optimized JavaScript, and minimal dependencies
+- **SEO Friendly**: Structured meta tags, semantic HTML, and proper document architecture
+- **Accessibility**: ARIA labels, keyboard navigation, and proper contrast ratios
 
 ## 📁 File Structure
 
@@ -17,7 +18,12 @@ Hi, I'm Herald Kent Amolong, a passionate Computer Science student learning web 
 Portfolio/
 ├── index.html          # Main HTML file
 ├── styles.css          # All CSS styles and animations
-├── script.js           # JavaScript functionality
+├── script.js           # Main JavaScript functionality
+├── particles.js        # Particle background animations
+├── orbit.js            # Tech orbit animations
+├── js/
+│   ├── scroll-animations.js  # Scroll-based animations
+│   └── tech-visual.js        # Interactive tech visualization
 ├── README.md           # This documentation
 ├── package.json        # Project configuration
 └── images/             # Image assets
@@ -26,10 +32,11 @@ Portfolio/
 ## 🚀 Quick Start
 
 1. **Clone or download** this repository
-2. **Add your images** to the `images/` folder
-3. **Customize the content** in `index.html`
-4. **Update colors/styling** in `styles.css` using CSS variables
-5. **Deploy** to your preferred hosting service
+2. **Install dependencies** (if any) with `npm install`
+3. **Run development server** with a tool like Five Server or Live Server
+4. **Customize the content** in `index.html`
+5. **Update colors/styling** in `styles.css` using CSS variables
+6. **Deploy** to your preferred hosting service
 
 ## 🎨 Customization
 
@@ -47,16 +54,18 @@ All colors are defined as CSS variables in `styles.css`. Update these to match y
 
 ### Content
 This portfolio is personalized for Herald Kent Amolong and includes:
-- Hero section introducing Herald as a Computer Science student
+- Interactive hero section with tech orbit visualization and particle animations
 - About section highlighting his passion for web development and programming
-- Skills section showcasing technology competencies
-- Projects section featuring Herald's development work
-- Contact information and social media links
+- Dynamic skills section showcasing technology competencies with visual categories
+- Horizontally scrollable projects section featuring Herald's development work
+- Interactive contact section with form and social media connections
 
 To further customize:
 - Update project descriptions and links as you complete new work
-- Add new technologies to the skills section as you learn them
+- Add new technologies to the interactive orbit visualization
+- Modify particle animation parameters for different visual effects
 - Update contact information and social profiles
+- Add new project categories to the horizontally scrolling gallery
 
 ### Images
 The portfolio now includes beautiful SVG placeholder images:
@@ -85,14 +94,34 @@ To replace with your own images:
 
 ## 🛠 JavaScript Features
 
-The `script.js` file includes:
-- Mobile navigation toggle
-- Smooth scrolling
-- Contact form handling
-- Scroll-triggered animations
-- Typing animation effect
-- Parallax effects
-- Performance optimizations
+The portfolio includes several JavaScript files with specialized features:
+
+### `script.js` - Core Functionality
+- Mobile navigation toggle with smooth transitions
+- Form validation and submission handling
+- Scroll-triggered animations and effects
+- Typewriter text animation in hero section
+- Performance optimizations and lazy loading
+
+### `particles.js` - Background Effects
+- Canvas-based particle systems for visual interest
+- Dynamic particle movement and interactions
+- Background effects for hero and contact sections
+
+### `orbit.js` - Tech Visualization
+- Interactive orbit animation of technology icons
+- Dynamic positioning of tech particles
+- Smooth animations with proper timing and delays
+
+### `js/scroll-animations.js`
+- Element reveal on scroll
+- Parallax effects and scroll-based transitions
+- Animation timing coordination
+
+### `js/tech-visual.js`
+- Interactive tech visualization behaviors
+- Hover effects and tooltip display
+- Technology category management
 
 ## 📋 Browser Support
 
@@ -120,18 +149,37 @@ The `script.js` file includes:
 
 ### Changing the Color Scheme
 1. Open `styles.css`
-2. Modify the CSS variables in the `:root` section
-3. The entire site will update automatically
+2. Modify the CSS variables in the `:root` section:
+   ```css
+   :root {
+       --primary-color: #6366f1;
+       --accent-color: #06b6d4;
+       /* more color variables */
+   }
+   ```
+3. The entire site will update automatically through the CSS variable system
 
 ### Adding a New Project
-1. Copy an existing project card in `index.html`
+1. Copy an existing project card in the horizontal scrolling section
 2. Update the content, links, and technology tags
-3. Add a project image to replace the placeholder
+3. Add a project image to the proper size and format
+4. Ensure proper category assignment for filtering
 
-### Modifying Animations
-1. Animation timing is controlled by CSS variables
-2. Scroll animations are in the JavaScript file
-3. Hover effects are defined in CSS
+### Modifying Orbit Animations
+1. Edit orbit animation parameters in `styles.css` for visual changes:
+   ```css
+   @keyframes orbit-rotate {
+       from { transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg); }
+       to { transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg); }
+   }
+   ```
+2. Adjust orbit.js for timing and positioning of tech icons
+3. Modify particle positions and animation delays for varied effects
+
+### Customizing Particle Effects
+1. Find the particle settings in particles.js
+2. Adjust particle count, size, speed, and colors
+3. Modify movement patterns and interaction behaviors
 
 ## 🚀 Deployment
 
@@ -158,7 +206,15 @@ If you need help understanding this portfolio:
 
 ## 👨‍💻 About the Developer
 
-This portfolio was created by **Herald Kent Amolong**, a Computer Science student passionate about web development and programming. Follow my journey as I continue learning and building exciting projects!
+This portfolio was created by **Herald Kent Amolong**, a Computer Science student passionate about web development and programming. The portfolio showcases not only my projects but also my growing skills in:
+
+- Interactive UI/UX design
+- Modern CSS techniques (variables, animations, flexbox, grid)
+- Vanilla JavaScript for dynamic content
+- Canvas-based animations and effects
+- Responsive and accessible web design
+
+Follow my journey as I continue learning and building exciting projects!
 
 ## 📄 License
 
@@ -168,6 +224,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - Font: [Inter](https://fonts.google.com/specimen/Inter) from Google Fonts
 - Icons: [Font Awesome](https://fontawesome.com/)
-- Design inspiration from modern web design trends
+- Design inspiration from modern web design trends including glassmorphism and neumorphism
+- Animations inspired by creative coding communities
 
 ---

@@ -21,14 +21,6 @@ Portfolio/
 ├── README.md           # This documentation
 ├── package.json        # Project configuration
 └── images/             # Image assets
-    ├── favicon.svg     # Website favicon (SVG format)
-    ├── profile-placeholder.svg     # Profile image placeholder
-    ├── about-placeholder.svg       # About section image placeholder
-    ├── project1-placeholder.svg    # Project 1 image placeholder
-    ├── project2-placeholder.svg    # Project 2 image placeholder
-    ├── project3-placeholder.svg    # Project 3 image placeholder
-    ├── project4-placeholder.svg    # Project 4 image placeholder
-    └── project5-placeholder.svg    # Project 5 image placeholder
 ```
 
 ## 🚀 Quick Start

@@ -651,13 +651,13 @@ function init3DEnhancements() {
     const aboutCanvas = document.getElementById('about-particle-canvas');
     if (aboutCanvas && window.ParticleSystem) {
         const aboutParticleSystem = new ParticleSystem(aboutCanvas, {
-            particleCount: 40,
-            particleSize: 2,
-            particleColor: '#6366f1',
-            particleOpacity: 0.6,
-            connectionDistance: 100,
-            mouseInfluence: 120,
-            speed: 0.3
+            particleCount: 60,
+            particleSize: 2.5,
+            particleColor: '#ffffff',
+            particleOpacity: 0.7,
+            connectionDistance: 120,
+            mouseInfluence: 150,
+            speed: 0.4
         });
         console.log('About section particle system initialized');
     }

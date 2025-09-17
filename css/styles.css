@@ -664,8 +664,8 @@ section::before {
     height: 16px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: orbit-rotate 35s linear infinite 3s;
+    margin-top: -8px;
+    margin-left: -8px;
 }
 
 .tech-particle.p2 {
@@ -673,8 +673,8 @@ section::before {
     height: 12px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: orbit-rotate 35s linear infinite 9s;
+    margin-top: -6px;
+    margin-left: -6px;
 }
 
 .tech-particle.p3 {
@@ -682,8 +682,8 @@ section::before {
     height: 14px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: orbit-rotate-reverse 30s linear infinite 5s;
+    margin-top: -7px;
+    margin-left: -7px;
 }
 
 .tech-particle.p4 {
@@ -691,8 +691,8 @@ section::before {
     height: 10px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: orbit-rotate 25s linear infinite 12s;
+    margin-top: -5px;
+    margin-left: -5px;
 }
 
 .tech-particle.p5 {
@@ -700,8 +700,8 @@ section::before {
     height: 8px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: orbit-rotate-reverse 30s linear infinite 8s;
+    margin-top: -4px;
+    margin-left: -4px;
 }
 
 .tech-particle.p6 {
@@ -709,8 +709,8 @@ section::before {
     height: 15px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    animation: orbit-rotate 35s linear infinite 15s;
+    margin-top: -7.5px;
+    margin-left: -7.5px;
 }
 
 .tech-icons {
@@ -778,50 +778,50 @@ section::before {
 
 .tech-icon.html {
     color: #e34f26;
-    top: calc(50% - 20px); /* Center vertically with half the icon height */
-    left: calc(50% - 20px); /* Center horizontally with half the icon width */
-    transform-origin: center;
-    animation: orbit-rotate 35s linear infinite 1s;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .tech-icon.css {
     color: #2965f1;
-    top: calc(50% - 20px); /* Center vertically with half the icon height */
-    left: calc(50% - 20px); /* Center horizontally with half the icon width */
-    transform-origin: center;
-    animation: orbit-rotate 35s linear infinite 7s; /* Same duration with delay */
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .tech-icon.js {
     color: #f7df1e;
-    top: calc(50% - 20px); /* Center vertically with half the icon height */
-    left: calc(50% - 20px); /* Center horizontally with half the icon width */
-    transform-origin: center;
-    animation: orbit-rotate 35s linear infinite 14s; /* Same duration with delay */
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .tech-icon.react {
     color: #61dafb;
-    top: calc(50% - 20px); /* Center vertically with half the icon height */
-    left: calc(50% - 20px); /* Center horizontally with half the icon width */
-    transform-origin: center;
-    animation: orbit-rotate 35s linear infinite 21s; /* Same duration with delay */
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .tech-icon.node {
     color: #68a063;
-    top: calc(50% - 20px); /* Center vertically with half the icon height */
-    left: calc(50% - 20px); /* Center horizontally with half the icon width */
-    transform-origin: center;
-    animation: orbit-rotate-reverse 30s linear infinite 5s; /* Match orbit-2 with delay */
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .tech-icon.python {
     color: #3572a5;
-    top: calc(50% - 20px); /* Center vertically with half the icon height */
-    left: calc(50% - 20px); /* Center horizontally with half the icon width */
-    transform-origin: center;
-    animation: orbit-rotate-reverse 30s linear infinite 15s; /* Match orbit-2 with delay */
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
 }
 
 .tech-visual-container.interactive .orbit-container {
@@ -841,13 +841,18 @@ section::before {
 }
 
 @keyframes orbit-rotate {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
 }
 
 @keyframes orbit-rotate-reverse {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(-360deg) translateX(140px) rotate(360deg); }
+    from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+    to { transform: rotate(-360deg) translateX(140px) rotate(360deg); }
+}
+
+@keyframes orbit-rotate-small {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
 }
 
 /* Additional simpler orbit animations for particles */

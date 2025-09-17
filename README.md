@@ -6,8 +6,11 @@ Hi, I'm Herald Kent Amolong, a passionate Computer Science student specializing 
 
 - **Responsive Design**: Seamlessly adapts to all devices (mobile, tablet, desktop)
 - **Advanced Animations**: Dynamic orbit animations, particle effects, typewriter animations, and interactive hover states
-- **Interactive Elements**: Tech orbit visualization, scrollable project galleries, and animated particle backgrounds
-- **Modern UI/UX**: Glassmorphism effects, gradient overlays, and subtle motion design
+- **Interactive Elements**: Tech orbit visualization, horizontally scrollable project galleries, and animated particle backgrounds
+- **Modern UI/UX**: Glassmorphism effects, gradient overlays, inner/outer shadows, and subtle motion design
+- **Particle Systems**: Consistent white particle networks in About and Contact sections with mouse interaction
+- **Orbital Tech Visualization**: Perfectly aligned tech icons moving along visible orbit rings in the hero section
+- **Enhanced Shadows**: Sophisticated depth effects with inner and outer shadows on key sections
 - **Optimized Performance**: Efficient CSS variables, optimized JavaScript, and minimal dependencies
 - **SEO Friendly**: Structured meta tags, semantic HTML, and proper document architecture
 - **Accessibility**: ARIA labels, keyboard navigation, and proper contrast ratios
@@ -17,31 +20,32 @@ Hi, I'm Herald Kent Amolong, a passionate Computer Science student specializing 
 ```
 Portfolio/
 ├── index.html          # Main HTML file
-├── styles.css          # All CSS styles and animations
-├── script.js           # Main JavaScript functionality
-├── particles.js        # Particle background animations
-├── orbit.js            # Tech orbit animations
+├── css/
+│   └── styles.css      # All CSS styles and animations
 ├── js/
+│   ├── script.js       # Main JavaScript functionality
+│   ├── particles.js    # Particle background animations
+│   ├── orbit.js        # Tech orbit animations
 │   ├── scroll-animations.js  # Scroll-based animations
 │   └── tech-visual.js        # Interactive tech visualization
+├── images/             # Image assets and SVG graphics
 ├── README.md           # This documentation
-├── package.json        # Project configuration
-└── images/             # Image assets
+└── package.json        # Project configuration
 ```
 
 ## 🚀 Quick Start
 
 1. **Clone or download** this repository
-2. **Install dependencies** (if any) with `npm install`
-3. **Run development server** with a tool like Five Server or Live Server
-4. **Customize the content** in `index.html`
-5. **Update colors/styling** in `styles.css` using CSS variables
+2. **Open with a development server** (recommended: Five Server, Live Server, or similar)
+3. **Customize the content** in `index.html`
+4. **Update colors/styling** in `css/styles.css` using CSS variables
+5. **Modify animations** in the `js/` folder files
 6. **Deploy** to your preferred hosting service
 
 ## 🎨 Customization
 
 ### Colors
-All colors are defined as CSS variables in `styles.css`. Update these to match your brand:
+All colors are defined as CSS variables in `css/styles.css`. Update these to match your brand:
 
 ```css
 :root {
@@ -51,21 +55,25 @@ All colors are defined as CSS variables in `styles.css`. Update these to match y
     /* ... more variables */
 }
 ```
+    /* ... more variables */
+}
+```
 
 ### Content
 This portfolio is personalized for Herald Kent Amolong and includes:
-- Interactive hero section with tech orbit visualization and particle animations
-- About section highlighting his passion for web development and programming
-- Dynamic skills section showcasing technology competencies with visual categories
-- Horizontally scrollable projects section featuring Herald's development work
-- Interactive contact section with form and social media connections
+- Interactive hero section with perfectly aligned tech orbit visualization and particle animations
+- About section with consistent white particle effects matching the contact section
+- Dynamic skills section with enhanced shadow effects (inner/outer shadows on top and bottom)
+- Horizontally scrollable projects section featuring development work with smooth interactions
+- Interactive contact section with particle backgrounds and form functionality
 
 To further customize:
 - Update project descriptions and links as you complete new work
-- Add new technologies to the interactive orbit visualization
-- Modify particle animation parameters for different visual effects
+- Add new technologies to the interactive orbit visualization in `js/orbit.js`
+- Modify particle animation parameters in `js/particles.js` for different visual effects
 - Update contact information and social profiles
 - Add new project categories to the horizontally scrolling gallery
+- Adjust shadow effects in the skills section for different depth appearances
 
 ### Images
 The portfolio now includes beautiful SVG placeholder images:
@@ -96,32 +104,35 @@ To replace with your own images:
 
 The portfolio includes several JavaScript files with specialized features:
 
-### `script.js` - Core Functionality
+### `js/script.js` - Core Functionality
 - Mobile navigation toggle with smooth transitions
 - Form validation and submission handling
 - Scroll-triggered animations and effects
 - Typewriter text animation in hero section
+- Particle system initialization for both About and Contact sections
 - Performance optimizations and lazy loading
 
-### `particles.js` - Background Effects
+### `js/particles.js` - Background Effects
 - Canvas-based particle systems for visual interest
-- Dynamic particle movement and interactions
-- Background effects for hero and contact sections
+- Dynamic particle movement and mouse interactions
+- Consistent white particle networks across sections
+- Configurable particle count, size, speed, and connection distances
 
-### `orbit.js` - Tech Visualization
-- Interactive orbit animation of technology icons
-- Dynamic positioning of tech particles
+### `js/orbit.js` - Tech Visualization
+- Interactive orbit animation of technology icons perfectly aligned with visible rings
+- Dynamic positioning of tech particles on multiple orbit paths
 - Smooth animations with proper timing and delays
+- Configurable orbit radius and animation speeds
 
 ### `js/scroll-animations.js`
-- Element reveal on scroll
+- Element reveal on scroll with intersection observer
 - Parallax effects and scroll-based transitions
-- Animation timing coordination
+- Animation timing coordination for smooth user experience
 
 ### `js/tech-visual.js`
 - Interactive tech visualization behaviors
 - Hover effects and tooltip display
-- Technology category management
+- Technology category management and interactions
 
 ## 📋 Browser Support
 
@@ -148,7 +159,7 @@ The portfolio includes several JavaScript files with specialized features:
 ## 📝 Customization Guide
 
 ### Changing the Color Scheme
-1. Open `styles.css`
+1. Open `css/styles.css`
 2. Modify the CSS variables in the `:root` section:
    ```css
    :root {
@@ -166,20 +177,38 @@ The portfolio includes several JavaScript files with specialized features:
 4. Ensure proper category assignment for filtering
 
 ### Modifying Orbit Animations
-1. Edit orbit animation parameters in `styles.css` for visual changes:
+1. Edit orbit animation parameters in `css/styles.css` for visual changes:
    ```css
    @keyframes orbit-rotate {
-       from { transform: translate(-50%, -50%) rotate(0deg) translateX(180px) rotate(0deg); }
-       to { transform: translate(-50%, -50%) rotate(360deg) translateX(180px) rotate(-360deg); }
+       from { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+       to { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
    }
    ```
-2. Adjust orbit.js for timing and positioning of tech icons
+2. Adjust `js/orbit.js` for timing and positioning of tech icons
 3. Modify particle positions and animation delays for varied effects
 
 ### Customizing Particle Effects
-1. Find the particle settings in particles.js
-2. Adjust particle count, size, speed, and colors
+1. Find the particle settings in `js/particles.js`
+2. Adjust particle count, size, speed, and colors in `js/script.js`:
+   ```javascript
+   particleCount: 60,
+   particleSize: 2.5,
+   particleColor: '#ffffff',
+   particleOpacity: 0.7
+   ```
 3. Modify movement patterns and interaction behaviors
+
+### Adjusting Shadow Effects
+1. Modify the skills section shadows in `css/styles.css`:
+   ```css
+   .skills {
+       box-shadow: 
+           inset 0 15px 25px -5px rgba(0, 0, 0, 0.3),
+           inset 0 -15px 25px -5px rgba(0, 0, 0, 0.3);
+   }
+   ```
+2. Adjust spread radius values to control shadow direction
+3. Modify opacity values for intensity control
 
 ## 🚀 Deployment
 

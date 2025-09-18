@@ -54,10 +54,10 @@
   "dependencies": {
     "fonts": "Google Fonts (Inter)",
     "icons": "Font Awesome 6.0",
-    "external": [],
-    "dev": {
-      "five-server": "^0.1.5"
-    }
+    "external": []
+  },
+  "devDependencies": {
+    "five-server": "^0.1.5"
   },
   "color_scheme": {
     "primary": "#6366f1",

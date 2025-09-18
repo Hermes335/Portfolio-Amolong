@@ -21,18 +21,18 @@
     "javascript",
     "glassmorphism"
   ],
-  "files": {
-    "main": "index.html",
-    "styles": "styles.css",
-    "scripts": [
-      "script.js",
-      "particles.js",
-      "orbit.js",
-      "js/scroll-animations.js",
-      "js/tech-visual.js"
-    ],
-    "documentation": "README.md"
-  },
+
+  "files": [
+    "index.html",
+    "styles.css",
+    "script.js",
+    "particles.js",
+    "orbit.js",
+    "js/scroll-animations.js",
+    "js/tech-visual.js",
+    "README.md"
+  ],
+
   "features": [
     "Responsive Design",
     "Interactive Tech Orbit Visualization",
